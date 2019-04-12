@@ -20,7 +20,7 @@ const imageSource = event.target.src;
 const funImage = document.querySelectorAll('img');
 funImage.forEach(function(element){
     element.addEventListener('click', function(event){
-const fun = event.target.src;
+        const fun = event.target.src;
     document.body.style.background = `url(${fun})`;
     });
 })
@@ -29,7 +29,7 @@ const fun = event.target.src;
 
 
 
-
+//When you get to the bottom of the page a message will pop up saying you have reached the bottom of the page
 window.addEventListener('scroll',()=>{
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = window.scrollY;
@@ -38,6 +38,17 @@ window.addEventListener('scroll',()=>{
         alert("Youve reached the bottom!")
     }
 })
+//when mouse goes over any p tags the font changes color
+const paragraphs = document.querySelector('p');
+    paragraphs.addEventListener('mouseover',function(event){
+        document.body.style.color = 'blue';
+        
+    })
+paragraphs.addEventListener('mouseleave',function(event){
+    
+    document.body.style.color = 'black';
+})
+
 
 // Array.from()
 // node list can use forEach
