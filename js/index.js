@@ -61,33 +61,10 @@ navigation.forEach(function(element){
 element.addEventListener('click',function(event){
     event.preventDefault()
     event.stopPropagation()
-    document.body.style.backgroundColor = 'white';
+    document.body.style.background = 'blue';
     
 });
 })
 
 
-// Array.from()
-// node list can use forEach
-// getElements return html collection vs node list
-// * [ ] `mouseover`
-// 	* [ ] `keydown`
-// 	* [ ] `wheel`
-// 	* [ ] `drag / drop`
-// 	* [ ] `load`
-// 	* [ ] `focus`
-// 	* [ ] `resize`
-// 	* [ ] `scroll`
-// 	* [ ] `select`
-// 	* [ ] `dblclick`
 
-// const workBtn = document.querySelector(".lambda-button")
-
-// workBtn.addEventListener('click',function(event){
-//   console.log('Button Clicked')
-// })
-
-// const clickHandler = function(event){
-//   console.log('Button Clicked')
-// }
-// workBtn.addEventListener('click',clickHandler)
