@@ -41,12 +41,29 @@ window.addEventListener('scroll',()=>{
 //when mouse goes over any p tags the font changes color
 const paragraphs = document.querySelector('p');
     paragraphs.addEventListener('mouseover',function(event){
+        
         document.body.style.color = 'blue';
         
     })
 paragraphs.addEventListener('mouseleave',function(event){
     
     document.body.style.color = 'black';
+})
+
+const container = document.querySelector('header')
+container.addEventListener('click',function(event){
+    document.body.style.background = 'gray';
+});
+
+//Using preventDefault on navigation links and stop Propagation to keep the parent object from being clicked when one of the nav links is clicked. 
+const navigation = document.querySelectorAll('.nav-link')
+navigation.forEach(function(element){
+element.addEventListener('click',function(event){
+    event.preventDefault()
+    event.stopPropagation()
+    document.body.style.backgroundColor = 'white';
+    
+});
 })
 
 
