@@ -61,7 +61,7 @@ navigation.forEach(function(element){
 element.addEventListener('click',function(event){
     event.preventDefault()
     event.stopPropagation()
-    document.body.style.background = 'blue';
+    document.body.style.background = 'white';
     
 });
 })
