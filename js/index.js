@@ -2,7 +2,7 @@
 //This is selecting all the buttons and when clicked they each count how many times they have been clicked.
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(function (element){
-    element.addEventListener('click', event => {
+    element.addEventListener('mousedown', event => {
         element.innerHTML = `Click count: ${event.detail}`;
       });
 })
@@ -11,21 +11,25 @@ buttons.forEach(function (element){
 
 const image = document.querySelectorAll('.img-content');
 image.forEach(function(element){
-    element.addEventListener('click', function(event){
+    element.addEventListener('select', function(event){
 const imageSource = event.target.src;
     document.body.style.background = `url(${imageSource})`;
 });
 })
-//This allows the top and bottom image when clicked to change the background
+//This allows the top and bottom image when doubleclicked to change the background
 const funImage = document.querySelectorAll('img');
 funImage.forEach(function(element){
-    element.addEventListener('click', function(event){
+    element.addEventListener('dblclick', function(event){
         const fun = event.target.src;
     document.body.style.background = `url(${fun})`;
     });
 })
-
-
+//drag event that allows you to drag a picture and make it disappear
+funImage.forEach(function(element){
+    element.addEventListener('drag',function(event){
+        event.target.style.visibility = 'hidden';
+    });
+})
 
 
 
@@ -39,15 +43,18 @@ window.addEventListener('scroll',()=>{
     }
 })
 //when mouse goes over any p tags the font changes color
-const paragraphs = document.querySelector('p');
-    paragraphs.addEventListener('mouseover',function(event){
+const paragraphs = document.querySelectorAll('p');
+paragraphs.forEach(function(element){
+    element.addEventListener('mouseover',function(event){
         
         document.body.style.color = 'blue';
-        
+    });
     })
-paragraphs.addEventListener('mouseleave',function(event){
+    paragraphs.forEach(function(element){ 
+element.addEventListener('mouseleave',function(event){
     
     document.body.style.color = 'black';
+});
 })
 
 const container = document.querySelector('header')
@@ -56,7 +63,7 @@ container.addEventListener('click',function(event){
 });
 
 //Using preventDefault on navigation links and stop Propagation to keep the parent object from being clicked when one of the nav links is clicked. 
-const navigation = document.querySelectorAll('.nav-link')
+ const navigation = document.querySelectorAll('.nav-link')
 navigation.forEach(function(element){
 element.addEventListener('click',function(event){
     event.preventDefault()
@@ -65,6 +72,17 @@ element.addEventListener('click',function(event){
     
 });
 })
+
+    navigation.forEach(function(element){
+element.addEventListener('focus',function(event){
+    event.target.style.background = 'pink';
+});
+    })
+    navigation.forEach(function(element){
+        element.addEventListener('blur',function(event){
+            event.target.style.background = '';
+        });
+            })
 
 
 
